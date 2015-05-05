@@ -11,7 +11,7 @@ var program = require('commander'),
     util = require('util'),
     path = require('path');
 
-program.version('0.2.0')
+program.version('0.3.0')
     .option('--env <environment>', 'Environment', 'dev')
     .option('--app <name>', 'Run within a specified app environment')
     .option('--cmd <command>', 'Run command')
