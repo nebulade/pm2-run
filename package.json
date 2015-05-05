@@ -1,0 +1,31 @@
+{
+  "name": "pm2-run",
+  "version": "0.1.0",
+  "description": "Run arbitrary commands within a pm2 env",
+  "main": "index.js",
+  "bin": { "pm2-run", "./index.js" },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nebulade/pm2-run.git"
+  },
+  "keywords": [
+    "pm2",
+    "run",
+    "command",
+    "env"
+  ],
+  "author": "Johannes Zellner <johannes@nebulon.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nebulade/pm2-run/issues"
+  },
+  "homepage": "https://github.com/nebulade/pm2-run",
+  "dependencies": {
+    "commander": "^2.8.1",
+    "supererror": "^0.7.0",
+    "underscore": "^1.8.3"
+  }
+}
