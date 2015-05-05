@@ -24,7 +24,6 @@ function exit(error) {
     process.exit(error ? 1 : 0);
 }
 
-if (!program.app) exit('--app is mandatory');
 if (!program.cmd) exit('--cmd is mandatory');
 if (!fs.existsSync(program.ecosystem)) exit('not such file ' + program.ecosystem);
 
@@ -37,14 +36,18 @@ try {
     exit(util.format('Failed to parse ecosystem:', e));
 }
 
-eco.apps.some(function (a) {
-    if (a.name === program.app) {
-        app = a;
-        return true;
-    }
+if (program.app) {
+    eco.apps.some(function (a) {
+        if (a.name === program.app) {
+            app = a;
+            return true;
+        }
 
-    return false;
-});
+        return false;
+    });
+} else {
+    app = eco.apps[0];
+}
 
 if (!app) exit(util.format('Unable to find app %s in %s', program.app, program.ecosystem));
 if (!app['env_' + program.env]) exit(util.format('Application %s does not have an %s environment', program.app, program.env));
