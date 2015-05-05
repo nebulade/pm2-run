@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Run arbitrary commands within a pm2 env",
   "main": "index.js",
-  "bin": { "pm2-run", "./index.js" },
+  "bin": { "pm2-run": "./index.js" },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
