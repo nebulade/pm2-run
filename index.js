@@ -9,9 +9,10 @@ var program = require('commander'),
     execSync = require('child_process').execSync,
     _ = require('underscore'),
     util = require('util'),
+    packageJson = require('./package.json'),
     path = require('path');
 
-program.version('0.3.0')
+program.version(packageJson.version)
     .option('--env <environment>', 'Environment', 'dev')
     .option('--app <name>', 'Run within a specified app environment')
     .option('--cmd <command>', 'Run command')
