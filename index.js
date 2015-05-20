@@ -55,7 +55,10 @@ if (!app['env_' + program.env]) exit(util.format('Application %s does not have a
 var env = _.extend(process.env, app['env'], app['env_' + program.env]);
 
 try {
-    console.log(execSync(program.cmd, { env: env }).toString('utf8'));
+    execSync(program.cmd, {
+        env: env,
+        stdio: [ null, process.stdout, process.stderr ]
+    });
 } catch (e) {
     exit(e);
 }
