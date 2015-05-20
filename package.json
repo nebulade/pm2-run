@@ -1,6 +1,6 @@
 {
   "name": "pm2-run",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Run arbitrary commands within a pm2 env",
   "main": "index.js",
   "bin": { "pm2-run": "./index.js" },
