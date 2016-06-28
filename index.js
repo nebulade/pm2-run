@@ -13,7 +13,7 @@ var program = require('commander'),
     path = require('path');
 
 program.version(packageJson.version)
-    .option('--env <environment>', 'Environment', 'dev')
+    .option('--env <environment>', 'Environment')
     .option('--app <name>', 'Run within a specified app environment')
     .option('--cmd <command>', 'Run command')
     .option('--ecosystem <ecosystem.json>', 'The ecosystem to work with', path.join(__dirname, 'ecosystem.json'))
@@ -51,7 +51,7 @@ if (program.app) {
 }
 
 if (!app) exit(util.format('Unable to find app %s in %s', program.app, program.ecosystem));
-if (!app['env_' + program.env]) exit(util.format('Application %s does not have an %s environment', program.app, program.env));
+if (program.env && !app['env_' + program.env]) exit(util.format('Application %s does not have an %s environment', program.app, program.env));
 
 var env = _.extend(process.env, app['env'], app['env_' + program.env]);
 
