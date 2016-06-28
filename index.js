@@ -53,7 +53,7 @@ if (program.app) {
 if (!app) exit(util.format('Unable to find app %s in %s', program.app, program.ecosystem));
 if (program.env && !app['env_' + program.env]) exit(util.format('Application %s does not have an %s environment', program.app, program.env));
 
-var env = _.extend(process.env, app['env'], app['env_' + program.env]);
+var env = _.extend(process.env, eco['env'], app['env'], app['env_' + program.env]);
 
 try {
     execSync(program.cmd, {
