@@ -50,8 +50,8 @@ if (program.app) {
     app = eco.apps[0];
 }
 
-if (!app) exit(util.format('Unable to find app %s in %s', program.app, program.ecosystem));
-if (program.env && !app['env_' + program.env]) exit(util.format('Application %s does not have an %s environment', program.app, program.env));
+if (!app) exit(util.format('Unable to find app %s in %s', app.name, program.ecosystem));
+if (program.env && !app['env_' + program.env]) exit(util.format('Application %s does not have an %s environment', app.name, program.env));
 
 var env = _.extend(process.env, eco['env'], app['env'], app['env_' + program.env]);
 
