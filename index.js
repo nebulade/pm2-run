@@ -57,6 +57,7 @@ var env = _.extend(process.env, eco['env'], app['env'], app['env_' + program.env
 
 try {
     execSync(program.cmd, {
+       cwd: app.cwd,
         env: env,
         stdio: [ null, process.stdout, process.stderr ]
     });
