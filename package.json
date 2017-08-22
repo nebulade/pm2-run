@@ -1,11 +1,11 @@
 {
   "name": "pm2-run",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Run arbitrary commands within a pm2 env",
   "main": "index.js",
   "bin": { "pm2-run": "./index.js" },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./index.js --ecosystem ./example-ecosystem.json --env staging --cmd \"node $PWD/test.js\""
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,18 @@
+{
+    "apps": [
+        {
+            "name": "test",
+            "script": "test.js",
+            "cwd": "/tmp",
+            "treekill": true,
+            "log_file": "test.log",
+            "max_memory_restart": "250M",
+            "log_date_format": "YYYY-MM-DD HH:mm:ss",
+            "env_staging": {
+                "DEBUG": "express*,connect-lastmile",
+                "DEBUG_COLORS": "true",
+		"PM2_TEST": "tester"
+            }
+        }
+    ]
+}
