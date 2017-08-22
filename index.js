@@ -16,6 +16,7 @@ program.version(packageJson.version)
     .option('--env <environment>', 'Environment')
     .option('--app <name>', 'Run within a specified app environment')
     .option('--cmd <command>', 'Run command')
+    .option('--cwd <directory>', 'Override current working directory')
     .option('--ecosystem <ecosystem.json>', 'The ecosystem to work with', path.join(__dirname, 'ecosystem.json'))
     .parse(process.argv);
 
@@ -57,7 +58,7 @@ var env = _.extend(process.env, eco['env'], app['env'], app['env_' + program.env
 
 try {
     execSync(program.cmd, {
-       cwd: app.cwd,
+        cwd: program.cwd || app.cwd,
         env: env,
         stdio: [ null, process.stdout, process.stderr ]
     });
